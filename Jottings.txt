@@ -1,0 +1,4 @@
+Commands
+- Ctrl + Shift + P = Showing Preferences
+
+- npx http-server -c-1 -p 8080 -P http://localhost:3000 = Using the http-server from the npm library directly to enable a client make a request to a proxy address, whilst destroying the cache files
