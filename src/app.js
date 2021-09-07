@@ -5,18 +5,21 @@ const Backend = require('i18next-fs-backend');
 const middleware = require('i18next-http-middleware');
 const errorHandler = require('./error/ErrorHandler');
 
-i18next.use(Backend).use(middleware.LanguageDetector).init({
+i18next
+  .use(Backend)
+  .use(middleware.LanguageDetector)
+  .init({
     fallbackLng: 'en',
     lng: 'en',
     ns: ['translation'],
     defaultNS: 'translation',
     backend: {
-        loadPath: './locales/{{lng}}/{{ns}}.json'
+      loadPath: './locales/{{lng}}/{{ns}}.json',
     },
     detection: {
-        lookupHeader: 'accept-language'
-    }
-});
+      lookupHeader: 'accept-language',
+    },
+  });
 
 const app = express();
 
